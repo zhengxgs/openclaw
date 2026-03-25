@@ -1,0 +1,22 @@
+{
+  "name": "@openclaw/lyj-house",
+  "version": "2026.3.12",
+  "description": "乐有家找房插件 — 通过自然语言描述查找深圳房源",
+  "type": "module",
+  "author": "lyj-wljk",
+  "license": "MIT",
+  "keywords": [
+    "openclaw",
+    "openclaw-plugin",
+    "房产",
+    "深圳",
+    "二手房",
+    "乐有家",
+    "找房"
+  ],
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}
