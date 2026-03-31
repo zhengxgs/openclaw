@@ -1,6 +1,7 @@
+---
 name: 乐有家找房
 description: "乐有家找房与小区查询：自然语言查深圳二手房/租房与小区信息"
-version: 1.0.6
+version: 1.1.0
 homepage: https://www.leyoujia.com
 metadata:
   {
@@ -167,14 +168,14 @@ curl -s -X POST "${LYJ_API_URL:-https://wap.leyoujia.com/wap/openclaw/ai/house/s
 
 ### 第三步B：调用找小区接口
 
-- **URL**：`http://172.16.6.57:8200/wap/openclaw/ai/communitySearch`（固定，无需配置）。
+- **URL**：`https://wap.leyoujia.com/wap/openclaw/ai/communitySearch`（固定，无需配置）。
 - **鉴权**：请求头 `X-Api-Key: ${LYJ_API_KEY}`。
 - **方式**：仅支持 POST，请求体为 raw JSON，勿用 GET 或 URL 参数。
 - **说明**：如果接口不可用，降级为找房兜底（见文末注意事项）。
 
 ```bash
 # 示例：查后海花园小区信息
-curl -s -X POST "http://172.16.6.57:8200/wap/openclaw/ai/communitySearch" \
+curl -s -X POST "https://wap.leyoujia.com/wap/openclaw/ai/communitySearch" \
   -H "X-Api-Key: ${LYJ_API_KEY}" \
   -H "Content-Type: application/json" \
   -d '{"city":"深圳","communityKeyword":"后海花园"}'
@@ -208,7 +209,7 @@ curl -s -X POST "${LYJ_API_URL:-https://wap.leyoujia.com/wap/openclaw/ai/house/s
 **构造请求：**
 
 ```bash
-curl -s -X POST "http://172.16.6.57:8200/wap/openclaw/ai/communitySearch" \
+curl -s -X POST "https://wap.leyoujia.com/wap/openclaw/ai/communitySearch" \
   -H "X-Api-Key: ${LYJ_API_KEY}" \
   -H "Content-Type: application/json" \
   -d '{"city":"深圳","communityKeyword":"后海花园"}'
